@@ -7,6 +7,8 @@ public class Profile {
     String lastName;
     String firstName;
     Date dateOfBirth;
+    String objectId;
+    String email;
 
     public String getLastName() {
         return lastName;
@@ -26,7 +28,21 @@ public class Profile {
 
     public Profile(){
         dateOfBirth = new Date();
+        lastName = "Data";
+        firstName = "New";
+        email = "alacornbob@gmail.com";
+
+        public String getObjectId(){
+            return objectId;
+        } }
+
+        public void setObjectId(String objectID){
+
+            this.objectId = objectID;
+
+        }
+
+
+    public String getObjectId() {
     }
-
-
 }

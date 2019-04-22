@@ -14,12 +14,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.com.backendless.Backendless;
 
 public class ApplicantActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     Fragment contentFragment = null;
-
+public String BE_APP_ID = "1F875D86-14B0-B3A2-FF93-C46F537B3B00";
+public String BE_ANDROID_API_KEY = "F57D0CF5-D389-AF56-FFC3-9A4EF3694900";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,8 @@ public class ApplicantActivity extends AppCompatActivity
         setContentView(R.layout.activity_applicant);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -92,11 +96,11 @@ public class ApplicantActivity extends AppCompatActivity
 
         if (id == R.id.family_member) {
 
-            contentFragment = new FamilyMemberFragment();
+            contentFragment = new Fragment();
 
         } else if (id == R.id.profile) {
 
-            contentFragment = new ProfileFragment();
+            contentFragment = new Fragment();
 
         }
 

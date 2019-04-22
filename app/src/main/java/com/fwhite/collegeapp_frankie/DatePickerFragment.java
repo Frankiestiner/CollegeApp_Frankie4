@@ -18,7 +18,7 @@ import java.util.GregorianCalendar;
 public class DatePickerFragment extends DialogFragment {
 
     final static String DATE_ARGUMENT ="dateofbirth";
-    final static String EXTRA_DATE_OF_BIRTH = "";
+    final static String EXTRA_DATE_OF_BIRTH = "com.fwhite.collegeapp_frankie.FamilyMemberFragment";
 
     DatePicker mDatePicker;
     Date mDate;
