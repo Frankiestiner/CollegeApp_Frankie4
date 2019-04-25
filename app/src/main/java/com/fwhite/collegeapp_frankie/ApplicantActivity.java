@@ -14,7 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.com.backendless.Backendless;
+
 
 public class ApplicantActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -121,5 +121,5 @@ public String BE_ANDROID_API_KEY = "F57D0CF5-D389-AF56-FFC3-9A4EF3694900";
         drawer.closeDrawer(GravityCompat.START);
 
         return true;
-    }
+    }*/
 }

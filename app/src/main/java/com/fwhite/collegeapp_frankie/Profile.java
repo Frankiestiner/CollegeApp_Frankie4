@@ -31,10 +31,10 @@ public class Profile {
         lastName = "Data";
         firstName = "New";
         email = "alacornbob@gmail.com";
-
+    }
         public String getObjectId(){
-            return objectId;
-        } }
+        return objectId;
+        }
 
         public void setObjectId(String objectID){
 
@@ -43,6 +43,4 @@ public class Profile {
         }
 
 
-    public String getObjectId() {
-    }
 }
