@@ -1,7 +1,9 @@
 package com.fwhite.collegeapp_frankie;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
@@ -11,6 +13,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+
 
 import com.backendless.Backendless;
 import com.backendless.async.callback.AsyncCallback;
@@ -18,13 +23,16 @@ import com.backendless.exceptions.BackendlessFault;
 import com.backendless.persistence.BackendlessDataQuery;
 import com.backendless.persistence.DataQueryBuilder;
 
+import java.io.File;
 import java.util.Date;
 import java.util.List;
 
 public class ProfileFragment extends Fragment {
 
     public static final int REQUEST_DATE_OF_BIRTH = 0;
-    Button DatePickerButton;
+    private ImageButton mSelfieButton;
+    private ImageView mSelfieView;
+    private File mSelfieFile;Button DatePickerButton;
     Button mSubmit;
     EditText firstNameEdit;
     EditText lastNameEdit;
@@ -33,7 +41,7 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup view, Bundle bundle){
         super.onCreateView(inflater, view, bundle);
         mProfile = new Profile();
-        String whereClause = "email = 'jlinburg@doversd.org'";
+        String whereClause = "email = 'alacornbob@gmail.com'";
         //Retrieve from Backendless
         DataQueryBuilder query = DataQueryBuilder.create();
         query.setWhereClause(whereClause);
@@ -109,7 +117,7 @@ public class ProfileFragment extends Fragment {
 
     //convenience method for saving to Backendless
     private void saveToBackendless(){
-        String whereClause = "email = 'jlinburg@doversd.org'";
+        String whereClause = "email = 'alacornbob@gmail.com'";
         DataQueryBuilder query = DataQueryBuilder.create();
         query.setWhereClause(whereClause);
         Backendless.Data.of(Profile.class).find(query, new AsyncCallback<List<Profile>>() {
@@ -153,5 +161,17 @@ public class ProfileFragment extends Fragment {
             }
         });
     }
+    public void updateSelfieView(){
 
+
+
+    }
+
+    public File getPhotoFile() {
+        File externalFilesDir = getActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        if (externalFilesDir == null) {
+            return null;
+        }
+        return new File (externalFilesDir, mProfile.getPhotoFilename());
+    }
 }

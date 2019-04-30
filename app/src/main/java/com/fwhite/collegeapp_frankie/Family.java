@@ -12,8 +12,12 @@ public class Family {
         family = new ArrayList<>();
         Guardian mom = new Guardian("my", "mother");
         Guardian dad = new Guardian("my", "father");
+        Sibling OldBrother = new Sibling("my", "older brother");
+        Sibling LilBrother = new Sibling("my", "younger brother");
         family.add(mom);
         family.add(dad);
+        family.add(OldBrother);
+        family.add(LilBrother);
     }
 
     public static Family getFamily(){
@@ -30,5 +34,9 @@ public class Family {
     public void setFamily(ArrayList<FamilyMember> family) {
         this.family = family;
     }
-}
 
+    public void addFamilyMember( FamilyMember fm){ family.add(fm); }
+
+    public void deleteFamilyMember(FamilyMember fm){ family.remove(fm); }
+
+}

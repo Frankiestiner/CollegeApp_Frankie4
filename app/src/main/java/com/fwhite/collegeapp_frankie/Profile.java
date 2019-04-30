@@ -28,8 +28,8 @@ public class Profile {
 
     public Profile(){
         dateOfBirth = new Date();
-        lastName = "Data";
-        firstName = "New";
+        lastName = "Frankie";
+        firstName = "White";
         email = "alacornbob@gmail.com";
     }
         public String getObjectId(){
@@ -41,6 +41,8 @@ public class Profile {
             this.objectId = objectID;
 
         }
-
+    public String getPhotoFilename(){
+        return photoFileName;
+    }
 
 }
