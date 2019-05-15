@@ -36,8 +36,7 @@ public class ApplicantActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        APP_ID = getString(R.string.APP_ID);
-        API_KEY = getString(R.string.API_KEY);
+
         Backendless.initApp (this, APP_ID, API_KEY);
 
 

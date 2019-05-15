@@ -10,8 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class SiblingFragment extends Fragment {
-
 
     public class SiblingFragment extends Fragment {
         private EditText firstEdit, lastEdit, occupationEdit;
@@ -25,7 +23,7 @@ public class SiblingFragment extends Fragment {
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_guardian, container, false);
 
-            mSibling = new Sibling("wnda", "Lovelace", "Programmer");
+            Sibling mSibling = new Sibling("Isaiah", "White");
 
             occupationText = (TextView) rootView.findViewById(R.id.occupationText);
             firstEdit = (EditText) rootView.findViewById(R.id.firstEdit);
@@ -35,4 +33,3 @@ public class SiblingFragment extends Fragment {
             return rootView;
         }
     }
-}

@@ -9,6 +9,7 @@ public class Profile {
     Date dateOfBirth;
     String objectId;
     String email;
+    private String photoFileName;
 
     public String getLastName() {
         return lastName;

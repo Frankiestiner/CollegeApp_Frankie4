@@ -1,10 +1,22 @@
 package com.fwhite.collegeapp_frankie;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.util.Log;
+import android.view.ContextMenu;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import com.backendless.exceptions.BackendlessFault;
+
 import java.util.ArrayList;
 public class FamilyListFragment extends ListFragment {
 
@@ -233,7 +245,7 @@ public class FamilyListFragment extends ListFragment {
    case R.id.menu_item_delete_family_member:
     Family.getFamily().deleteFamilyMember(familyMember);
     adapter.notifyDataSetChanged();
-    Backendless.Data.of(FamilyMember.class).remove(familyMember,new
+  /*  Backendless.Data.of(FamilyMember.class).remove(familyMember,new
             AsyncCallback<Long>() {
              @Override
              public void handleResponse(Long response) {
@@ -245,7 +257,7 @@ public class FamilyListFragment extends ListFragment {
               Log.e(TAG, fault.getMessage());
              }
             });
-    return true;
+    return true;*/
   }
   return super.onContextItemSelected(item);
  }
